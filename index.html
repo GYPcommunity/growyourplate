@@ -24,6 +24,29 @@
         margin-bottom: 30px;
     }
 
+    /* Navigation Menu */
+    .nav-menu {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .nav-menu li a {
+        text-decoration: none;
+        color: #2a7a2a;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.3s;
+    }
+
+    .nav-menu li a:hover {
+        color: #1b4d1b;
+    }
+
+    /* Gallery */
     .gallery {
         display: flex;
         flex-wrap: wrap;
@@ -63,6 +86,15 @@
 </head>
 <body>
 
+<!-- Navigation Menu -->
+<nav>
+    <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
 <h1>Welcome to Grow Your Plate</h1>
 <p>Healthy Gardens, Healthy Communities</p>
 
@@ -72,8 +104,8 @@
         <div class="caption">Community Garden</div>
     </div>
     <div class="gallery-item">
-        <img src="images/IMG_0300.jpeg" alt="Fresh Produce">
-        <div class="caption">Fresh Produce</div>
+        <img src="images/IMG_0300.jpeg" alt="Herb in Planter Boxes">
+        <div class="caption">Herb in Planter Boxes</div>
     </div>
     <div class="gallery-item">
         <img src="images/IMG_0301.jpeg" alt="Garden Workshop">
