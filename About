@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About - Grow Your Plate</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8f5;
+        color: #333;
+        margin: 0;
+        padding: 0 20px;
+        line-height: 1.6;
+      }
+      header {
+        text-align: center;
+        padding: 50px 0 30px 0;
+      }
+      h1 {
+        color: #2e7d32;
+        font-size: 2.5em;
+      }
+      p {
+        max-width: 800px;
+        margin: 20px auto;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>About Grow Your Plate</h1>
+    </header>
+    <p>
+      Grow Your Plate is a community initiative dedicated to promoting healthy gardens, sustainable food practices, and strong local communities. We believe that everyone deserves access to fresh, nutritious food and the knowledge to grow it themselves.
+    </p>
+    <p>
+      Our mission is to empower individuals and families by providing educational resources, workshops, and hands-on opportunities to cultivate gardens that nourish both body and community. Through collaboration with local partners, faith-based organizations, and volunteers, we create spaces where people can learn, share, and thrive together.
+    </p>
+    <p>
+      Whether you’re an experienced gardener or just starting out, Grow Your Plate is here to guide you in growing not only your food, but also meaningful connections that strengthen our communities.
+    </p>
+  </body>
+</html>
