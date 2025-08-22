@@ -49,17 +49,19 @@
     /* Gallery */
     .gallery {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        justify-content: center;  /* centers all images */
+        align-items: center;
         gap: 20px;
+        flex-wrap: wrap;          /* responsive */
+        margin: 40px 0;           /* adds space above and below gallery */
     }
 
     .gallery-item {
-        max-width: 300px;
+        max-width: 300px;         /* ensures symmetry */
     }
 
     .gallery img {
-        width: 100%;
+        width: 300px;             /* fixed width for all images */
         height: auto;
         border: 2px solid #333;
         border-radius: 8px;
