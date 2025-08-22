@@ -53,7 +53,7 @@
         align-items: center;
         gap: 20px;
         flex-wrap: wrap;          /* responsive */
-        margin: 40px 0;           /* adds space above and below gallery */
+        margin: 40px 0;           /* spacing above and below gallery */
     }
 
     .gallery-item {
@@ -61,15 +61,17 @@
     }
 
     .gallery img {
-        width: 300px;             /* fixed width for all images */
+        width: 300px;             /* same width for all images */
         height: auto;
         border: 2px solid #333;
         border-radius: 8px;
-        transition: transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+        transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .gallery img:hover {
         transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
     }
 
     .caption {
