@@ -1,69 +1,155 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Contact - Grow Your Plate</title>
-    <style>
-      body {
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Grow Your Plate</title>
+<style>
+    body {
         font-family: Arial, sans-serif;
-        background-color: #f0f8f5;
+        padding: 20px;
+        background-color: #f9f9f9;
         color: #333;
-        margin: 0;
-        padding: 0 20px;
         line-height: 1.6;
-      }
-      header {
         text-align: center;
-        padding: 50px 0 30px 0;
-      }
-      h1 {
-        color: #2e7d32;
-        font-size: 2.5em;
-      }
-      p {
+    }
+
+    h1 {
+        color: #2a7a2a;
+        margin-bottom: 20px;
+    }
+
+    p {
         max-width: 800px;
         margin: 20px auto;
-        font-size: 1.2em;
-      }
-      form {
-        max-width: 600px;
-        margin: 20px auto;
+        font-size: 1.1em;
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+        list-style-type: none;
+        padding: 0;
         display: flex;
-        flex-direction: column;
-      }
-      input, textarea {
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .nav-menu li a {
+        text-decoration: none;
+        color: #2a7a2a;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.3s;
+    }
+
+    .nav-menu li a:hover {
+        color: #1b4d1b;
+    }
+
+    /* Contact Form */
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        width: 100%;
         padding: 10px;
-        margin-bottom: 15px;
-        font-size: 1em;
-        border: 1px solid #ccc;
+        margin-top: 5px;
         border-radius: 5px;
-      }
-      button {
-        background-color: #2e7d32;
-        color: white;
-        padding: 12px;
+        border: 1px solid #ccc;
         font-size: 1em;
+        box-sizing: border-box;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #2a7a2a;
+        color: #fff;
         border: none;
         border-radius: 5px;
+        font-size: 1em;
         cursor: pointer;
-      }
-      button:hover {
-        background-color: #27672a;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Contact Grow Your Plate</h1>
-    </header>
-    <p>
-      Have questions, suggestions, or want to get involved? We’d love to hear from you! Fill out the form below, and we’ll get back to you as soon as possible.
-    </p>
-    <form action="mailto:info@growyourplate.org" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="subject" placeholder="Subject">
-      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </body>
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #1b4d1b;
+    }
+
+    /* Success Message */
+    .success-message {
+        margin-top: 20px;
+        color: green;
+        font-weight: bold;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav>
+    <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<h1>Contact Grow Your Plate</h1>
+
+<p>Have questions, ideas, or want to get involved? Send us a message using the form below!</p>
+
+<!-- Formspree Form -->
+<form id="contactForm" action="https://formspree.io/f/mvgqeblj" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+<div class="success-message" id="successMessage">Thank you for contacting us!</div>
+
+<script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // prevent default form submission
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                successMessage.style.display = 'block';
+                form.reset();
+            } else {
+                alert('Oops! There was a problem submitting your form.');
+            }
+        }).catch(error => {
+            alert('Oops! There was a problem submitting your form.');
+        });
+    });
+</script>
+
+</body>
 </html>
