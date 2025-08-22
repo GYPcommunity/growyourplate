@@ -1,53 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Grow Your Plate</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f8f5;
-        color: #333;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        margin-top: 60px;
-        font-size: 2.5em;
-        color: #2e7d32; /* green tone */
-      }
-      p {
-        font-size: 1.2em;
-        color: #555;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Welcome to Grow Your Plate</h1>
-    <p>Healthy Gardens, Healthy Communities</p>
-  </body>
-</html> 
-Add homepage HTML
-<img src="garden.jpg" alt="Vegetable and herb garden" style="max-width:80%; height:auto; margin-top:20px; border-radius:10px;">
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grow Your Plate</title>
-    <!-- Paste the <style> block here -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grow Your Plate</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #2a7a2a;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .gallery-item {
+        max-width: 300px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border: 2px solid #333;
+        border-radius: 8px;
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .caption {
+        margin-top: 5px;
+        font-size: 1em;
+        color: #555;
+    }
+
+    @media (max-width: 600px) {
+        .gallery {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+</style>
 </head>
 <body>
-    <h1>Welcome to Grow Your Plate</h1>
-    <p>Healthy Gardens, Healthy Communities</p>
 
-    <!-- Paste the gallery <div> here -->
-    <div class="gallery">
+<h1>Welcome to Grow Your Plate</h1>
+<p>Healthy Gardens, Healthy Communities</p>
+
+<div class="gallery">
+    <div class="gallery-item">
         <img src="images/4238F501-1D34-4976-BD5A-5E7ACC555178.png" alt="Community Garden">
-        <img src="images/IMG_0300.jpeg" alt="Fresh Produce">
-        <img src="images/IMG_0301.jpeg" alt="Garden Workshop">
+        <div class="caption">Community Garden</div>
     </div>
+    <div class="gallery-item">
+        <img src="images/IMG_0300.jpeg" alt="Fresh Produce">
+        <div class="caption">Fresh Produce</div>
+    </div>
+    <div class="gallery-item">
+        <img src="images/IMG_0301.jpeg" alt="Garden Workshop">
+        <div class="caption">Garden Workshop</div>
+    </div>
+</div>
+
 </body>
 </html>
