@@ -1,64 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Grow Your Plate</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Grow Your Plate</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      background-color: #f9f9f9;
-      color: #333;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+        background-color: #f9f9f9;
+        color: #333;
     }
-    a.back-home {
-      text-decoration: none;
-      color: #2a7a2a;
-      font-weight: bold;
-      display: inline-block;
-      margin-bottom: 30px;
-    }
+
     h1 {
-      color: #2a7a2a;
-      margin-bottom: 30px;
+        color: #2a7a2a;
+        margin-bottom: 30px;
     }
+
     form {
-      display: inline-block;
-      text-align: left;
-      max-width: 400px;
-      width: 100%;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: inline-block;
+        text-align: left;
+        max-width: 400px;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
     input, textarea {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
     }
+
     button {
-      background-color: #2a7a2a;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
+        background-color: #2a7a2a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
     }
+
     button:hover {
-      background-color: #1b4d1b;
+        background-color: #1b4d1b;
     }
-  </style>
+
+    .nav-menu {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .nav-menu li a {
+        text-decoration: none;
+        color: #2a7a2a;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.3s;
+    }
+
+    .nav-menu li a:hover {
+        color: #1b4d1b;
+    }
+</style>
 </head>
 <body>
 
-<!-- Back to Home link -->
-<a href="../index.html" class="back-home">← Back to Home</a>
+<!-- Navigation Menu -->
+<nav>
+    <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../About/index.html">About</a></li>
+        <li><a href="index.html">Contact</a></li>
+    </ul>
+</nav>
 
 <h1>Contact Us</h1>
 
