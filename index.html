@@ -5,105 +5,106 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grow Your Plate</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 20px;
-        background-color: #f9f9f9;
-        color: #333;
-    }
+/* version 2 - cache busting */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
 
-    h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        color: #2a7a2a;
-    }
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2a7a2a;
+}
 
-    p {
-        font-size: 1.2em;
-        margin-bottom: 30px;
-    }
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
 
-    /* Navigation Menu */
-    .nav-menu {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-bottom: 30px;
-    }
+/* Navigation Menu */
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
 
-    .nav-menu li a {
-        text-decoration: none;
-        color: #2a7a2a;
-        font-weight: bold;
-        font-size: 1.1em;
-        transition: color 0.3s;
-    }
+.nav-menu li a {
+    text-decoration: none;
+    color: #2a7a2a;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
 
-    .nav-menu li a:hover {
-        color: #1b4d1b;
-    }
+.nav-menu li a:hover {
+    color: #1b4d1b;
+}
 
-    /* Gallery */
+/* Gallery */
+.gallery {
+    display: flex;
+    justify-content: center;  /* centers the gallery */
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.gallery-item {
+    position: relative; 
+    max-width: 300px;
+    flex: 0 1 auto;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95em;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 5px;
+    border-radius: 4px;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
     .gallery {
-        display: flex;
-        justify-content: center;  /* centers the gallery */
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin: 40px 0;
+        flex-direction: column;
+        gap: 15px;
     }
-
-    .gallery-item {
-        position: relative; 
-        max-width: 300px;
-        flex: 0 1 auto;  /* prevents stretching */
-    }
-
-    .gallery img {
-        width: 300px;
-        height: auto;
-        border: 2px solid #333;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .gallery img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .caption {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        font-size: 0.95em;
-        opacity: 0;
-        background: rgba(0, 0, 0, 0.5); 
-        padding: 5px;
-        border-radius: 4px;
-        transform: translateY(20px);
-        transition: opacity 0.3s, transform 0.3s;
-    }
-
-    .gallery-item:hover .caption {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @media (max-width: 600px) {
-        .gallery {
-            flex-direction: column;
-            gap: 15px;
-        }
-    }
+}
 </style>
 </head>
 <body>
