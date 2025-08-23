@@ -5,20 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grow Your Plate</title>
 <style>
-/* Gallery CSS */
+/* Page styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2a7a2a;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #2a7a2a;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #1b4d1b;
+}
+
+/* Gallery */
 .gallery {
     display: flex;               /* horizontal layout */
-    justify-content: center;     /* centers images */
-    align-items: center;         /* vertically aligns images */
+    justify-content: center;     /* center images horizontally */
+    align-items: center;         /* vertically center images */
     gap: 20px;                   /* space between images */
     margin: 40px 0;
-    flex-wrap: nowrap;           /* prevents stacking except on tiny screens */
+    flex-wrap: nowrap;           /* no wrapping by default */
 }
 
 .gallery-item {
     position: relative;
     max-width: 300px;
-    flex: 0 1 auto;
+    flex: 0 1 auto;              /* prevents stretching */
 }
 
 .gallery img {
@@ -59,50 +101,9 @@
 
 @media (max-width: 600px) {
     .gallery {
-        flex-wrap: wrap;          /* stack on very small screens */
+        flex-wrap: wrap;         /* stack vertically on small screens */
         gap: 15px;
     }
-}
-
-/* Other page CSS (body, nav, headings) */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.nav-menu {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.nav-menu li a {
-    text-decoration: none;
-    color: #2a7a2a;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: color 0.3s;
-}
-
-.nav-menu li a:hover {
-    color: #1b4d1b;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #2a7a2a;
-}
-
-p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
 }
 </style>
 </head>
