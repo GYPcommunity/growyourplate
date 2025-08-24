@@ -1,1 +1,36 @@
-Add GitHub Action to auto-generate sitemap.xml
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate sitemap.xml
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          # Loop through all .html files in growyourplate and subfolders
+          find growyourplate -name "*.html" | while read file; do
+            # Remove folder prefix for URL
+            urlpath=${file#growyourplate/}
+            echo "  <url>" >> sitemap.xml
+            echo "    <loc>https://gypcommunity.github.io/growyourplate/$urlpath</loc>" >> sitemap.xml
+            echo "    <priority>0.8</priority>" >> sitemap.xml
+            echo "    <lastmod>$(date +%Y-%m-%d)</lastmod>" >> sitemap.xml
+            echo "  </url>" >> sitemap.xml
+          done
+          echo '</urlset>' >> sitemap.xml
+
+      - name: Commit sitemap
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap.xml" || echo "No changes to commit"
+          git push
